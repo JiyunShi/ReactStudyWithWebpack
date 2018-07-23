@@ -13,6 +13,7 @@ module.exports = {
         contentBase: './dist',
         port: 3000
     },
+    devtool: 'source-map',
     module:{
         rules: [
             {
@@ -20,14 +21,23 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
                 query:{
-                    presets: ["latest","stage-0","react"]
+                    presets: ["env","react"]
                 }
             },
             {
                 test: /\.json$/,
                 exclude: /(node_modules)/,
                 loader: 'json-loader!json-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
+            {
+                test: /\.scss$/,
+                loader:'style-loader!css-loader!sass-loader'
             }
+            
         ]
     }
 }
