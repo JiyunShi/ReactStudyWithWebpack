@@ -11,10 +11,7 @@ render(
         {hello}
         {goodbye}
         <HelloMessage name="kitty" />
-        <SkiDayCount total={50}
-                    powder={20}
-                    backCountry={10}
-                    goal={100}/>
+        <SkiDayCount />
         <SkiDayList days={
             [   
                 {

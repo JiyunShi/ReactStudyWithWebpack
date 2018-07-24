@@ -8,6 +8,12 @@ module.exports = {
         filename: "bundle.js",
         publicPath: "assets"
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+          'React':     'react'
+        })
+      ],
     devServer:{
         inline: true,
         contentBase: './dist',

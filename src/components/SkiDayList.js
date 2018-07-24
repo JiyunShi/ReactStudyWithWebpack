@@ -2,7 +2,6 @@ import Terrain from 'react-icons/lib/md/terrain'
 import SnowFlake from 'react-icons/lib/ti/weather-snow'
 import Calender from 'react-icons/lib/fa/calendar'
 import {SkiDayRow} from './SkiDayRow'
-import React from 'react'
 
 export const HelloMessage = (props) => <div>Hello {props.name}</div>;
 
