@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { hello, goodbye } from './lib';
 import SkiDayCount from './components/SkiDayCount';
 import {HelloMessage,SkiDayList} from './components/SkiDayList';
+import App from './components/App'
 
 Window.React = React;
 
@@ -11,8 +12,14 @@ render(
         {hello}
         {goodbye}
         <HelloMessage name="kitty" />
-        <SkiDayCount />
-        <SkiDayList days={
+        <SkiDayCount 
+                        total = {1}
+                        powder={25} 
+                        backCountry={22}
+                        goal= {100}/>
+        <App />
+        
+        {/* <SkiDayList days={
             [   
                 {
                     resort: "Sqaw Valley",
@@ -33,7 +40,8 @@ render(
                     backCountry: true
                 },
             ]
-        }/>
+        }
+        /> */}
     </div>,
 
 	document.getElementById('react-container')
