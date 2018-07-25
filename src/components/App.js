@@ -1,6 +1,7 @@
 import React from "react"
 import SkiDayCount from './SkiDayCount';
 import {HelloMessage,SkiDayList} from './SkiDayList';
+import { AddDayForm } from "./AddDayForm";
 
 
 class App extends React.Component {
@@ -32,27 +33,29 @@ class App extends React.Component {
       }
     
     countDays(filter){
-        return this.state.allSkiDays.filter((day)=>{
+        const {allSkiDays} = this.state;
+        return allSkiDays.filter((day)=>{
             if(filter){
                 return day[filter];
             }
             return day;
         }).length
     }
-
-
-
-
-
    
     render(){
         return (
             <div className="app">
-                <SkiDayList days ={this.state.allSkiDays}/>
-                <SkiDayCount total={this.countDays()} 
-                             powder = {this.countDays("powder")}
-                             backCountry = {this.countDays("backCountry")}
-                />
+                {
+                    (this.props.location.pathname ==="/") ?
+                        <SkiDayCount total={this.countDays()} 
+                        powder = {this.countDays("powder")}
+                        backCountry = {this.countDays("backCountry")}
+                    /> :
+                    (this.props.location.pathname ==="/add-day") ?
+                        <AddDayForm />:
+                        <SkiDayList days ={this.state.allSkiDays}/>
+                }
+
             </div>
         )
     }

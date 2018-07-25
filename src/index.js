@@ -4,11 +4,33 @@ import { hello, goodbye } from './lib';
 import SkiDayCount from './components/SkiDayCount';
 import {HelloMessage,SkiDayList} from './components/SkiDayList';
 import App from './components/App'
-
-Window.React = React;
-
+import {Router, Route, Link, Switch} from 'react-router-dom';
+import history from './history';
+import {Whoops404} from './components/Whoops404.js'
 render(
-    <div>
+
+    <Router history={history}>
+        <div>
+            {hello}
+            {goodbye}
+            <HelloMessage name="kitty" />
+            <SkiDayCount 
+                            total = {1}
+                            powder={25} 
+                            backCountry={22}
+                            goal= {100}/>
+            <Switch>
+            <Route  path="/" exact component = {App}/>
+            <Route  path="/list-days" component = {App}/>
+            <Route  path="/add-day" component = {App}/>
+            <Route  component={Whoops404}/>
+            </Switch>
+
+        </div>
+    </Router>
+
+/*
+<div>
         {hello}
         {goodbye}
         <HelloMessage name="kitty" />
@@ -41,8 +63,10 @@ render(
                 },
             ]
         }
-        /> */}
-    </div>,
+        /> 
+    </div>
+*/
+    ,
 
 	document.getElementById('react-container')
 )
