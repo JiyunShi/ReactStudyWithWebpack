@@ -1,10 +1,11 @@
 var webpack = require("webpack");
+var path = require("path");
 
 module.exports = {
     entry: "./src/index.js",
     mode: "development",
     output: {
-        path:__dirname +"/dist/assets",
+        path: path.resolve(__dirname,"/dist/assets/"),
         filename: "bundle.js",
         publicPath: "assets"
     },

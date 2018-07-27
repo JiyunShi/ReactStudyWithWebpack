@@ -43,6 +43,7 @@ class App extends React.Component {
     }
    
     render(){
+       
         return (
             <div className="app">
                 {
@@ -53,7 +54,8 @@ class App extends React.Component {
                     /> :
                     (this.props.location.pathname ==="/add-day") ?
                         <AddDayForm />:
-                        <SkiDayList days ={this.state.allSkiDays}/>
+                        <SkiDayList days ={this.state.allSkiDays}
+                                    filter = {this.props.match.params.filter}/>
                 }
 
             </div>

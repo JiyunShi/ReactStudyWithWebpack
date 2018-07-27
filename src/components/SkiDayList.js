@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
 
 export const HelloMessage = (props) => <div>Hello {props.name}</div>;
 
-export const SkiDayList = ({days}) =>
+export const SkiDayList = ({days, filter}) => {
+    if(filter) console.log(filter);
+    return(
     <table>
         <thead>
             <tr>
@@ -23,8 +25,8 @@ export const SkiDayList = ({days}) =>
                             {...day}/>
             )}
         </tbody>
-    </table>;
-
+    </table>);
+}
 SkiDayList.propTypes={
     days: function(props){
         if(!Array.isArray(props.days)){

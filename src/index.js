@@ -13,7 +13,7 @@ render(
         <div>
             {hello}
             {goodbye}
-            <HelloMessage name="kitty" />
+            <HelloMessage name="World" />
             <SkiDayCount 
                             total = {1}
                             powder={25} 
@@ -21,7 +21,9 @@ render(
                             goal= {100}/>
             <Switch>
             <Route  path="/" exact component = {App}/>
-            <Route  path="/list-days" component = {App}/>
+            <Route  path="/list-days" exact component = {App} />
+            <Route  path="/list-days/:filter" component = {App} >
+            </Route>
             <Route  path="/add-day" component = {App}/>
             <Route  component={Whoops404}/>
             </Switch>
