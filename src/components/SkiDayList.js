@@ -4,12 +4,16 @@ import Calender from 'react-icons/lib/fa/calendar'
 import {SkiDayRow} from './SkiDayRow'
 import React from 'react'
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 export const HelloMessage = (props) => <div>Hello {props.name}</div>;
 
 export const SkiDayList = ({days, filter}) => {
     if(filter) console.log(filter);
+    const filteredDays = (!filter||!filter.match(/powder|backCountry/))?
+        days: days.filter(day=>day[filter]);
     return(
+    <div className="ski-day-list">
     <table>
         <thead>
             <tr>
@@ -18,14 +22,29 @@ export const SkiDayList = ({days, filter}) => {
                 <th>Powder</th>
                 <th>BackCountry</th>
             </tr>
+            <tr>
+                <td colSpan={4}>
+                    <Link to="/list-days">
+                        All Days
+                    </Link>
+                    <Link to="/list-days/powder">
+                       Powder Days
+                    </Link>
+                    <Link to="/list-days/backCountry">
+                        backCountry Days
+                    </Link>
+                </td>
+            </tr>
         </thead>
         <tbody>
-            {days.map((day, i)=>
+            {filteredDays.map((day, i)=>
                 <SkiDayRow key={i}
                             {...day}/>
             )}
         </tbody>
-    </table>);
+    </table>
+    </div>
+    )
 }
 SkiDayList.propTypes={
     days: function(props){
