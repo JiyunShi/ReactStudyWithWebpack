@@ -4,10 +4,10 @@ import Calender from 'react-icons/lib/fa/calendar'
 import React from 'react'
 import PropTypes from 'prop-types';
 
-export const SkiDayRow = ({resort, date, powder, backCountry})=>(
+export const SkiDayRow = ({resort, date, powder, backcountry})=>(
    
     <tr>
-        <td>{date.getMonth()+1}/{date.getDate()}/{date.getFullYear()}</td>
+        <td>{date}</td>
         <td>
             {resort}
         </td>
@@ -15,15 +15,15 @@ export const SkiDayRow = ({resort, date, powder, backCountry})=>(
             {(powder)? <SnowFlake/>: null}
         </td>
         <td>
-            {(backCountry)? <Terrain /> : null}
+            {(backcountry)? <Terrain /> : null}
         </td>
     </tr>
 );
 
 SkiDayRow.propTypes ={
     resort: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date).isRequired,
+    date: PropTypes.string.isRequired,
     powder: PropTypes.bool,
-    backCountry: PropTypes.bool
+    backcountry: PropTypes.bool
 
 }

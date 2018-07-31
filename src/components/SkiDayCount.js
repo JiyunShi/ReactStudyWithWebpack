@@ -32,7 +32,7 @@ class SkiDayCount extends React.Component{
                     <span>days</span>
                 </div>
                 <div className = 'backCountry-days'>
-                    <span>{this.props.backCountry}</span>
+                    <span>{this.props.backcountry}</span>
                         <Terrain />
                     <span>days</span>
                 </div>
@@ -55,7 +55,7 @@ SkiDayCount.defaultProps = {
   SkiDayCount.propTypes = {
     total: PropTypes.number.isRequired,
     powder:PropTypes.number,
-    backCountry: PropTypes.number,
+    backcountry: PropTypes.number,
     goal: PropTypes.number
 }
 

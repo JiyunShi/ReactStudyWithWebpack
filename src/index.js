@@ -7,6 +7,8 @@ import App from './components/App'
 import {Router, Route, Link, Switch} from 'react-router-dom';
 import history from './history';
 import {Whoops404} from './components/Whoops404.js'
+import './styleSheets/ui.scss'
+import './styleSheets/index.scss'
 render(
 
     <Router history={history}>
