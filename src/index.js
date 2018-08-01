@@ -9,6 +9,8 @@ import history from './history';
 import {Whoops404} from './components/Whoops404.js'
 import './styleSheets/ui.scss'
 import './styleSheets/index.scss'
+import Member from './components/Member';
+import MemberList from './components/MemberList';
 render(
 
     <Router history={history}>
@@ -21,6 +23,7 @@ render(
                             powder={25} 
                             backCountry={22}
                             goal= {100}/>
+            
             <Switch>
             <Route  path="/" exact component = {App}/>
             <Route  path="/list-days" exact component = {App} />
@@ -29,7 +32,7 @@ render(
             <Route  path="/add-day" component = {App}/>
             <Route  component={Whoops404}/>
             </Switch>
-
+            <MemberList />
         </div>
     </Router>
 

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/prop-types": "^15.5.4",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-icons": "^2.2.7",
