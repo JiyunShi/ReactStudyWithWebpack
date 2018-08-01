@@ -11,6 +11,7 @@ import './styleSheets/ui.scss'
 import './styleSheets/index.scss'
 import Member from './components/Member';
 import MemberList from './components/MemberList';
+import routes from './routes'
 render(
 
     <Router history={history}>
@@ -32,7 +33,8 @@ render(
             <Route  path="/add-day" component = {App}/>
             <Route  component={Whoops404}/>
             </Switch>
-            <MemberList />
+           <MemberList />
+           routes
         </div>
     </Router>
 
